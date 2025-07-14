@@ -3,9 +3,8 @@
 deps="$(pkgx mash deps-as-plus-pkg)"
 
 echo "Running"
+echo "  pkgx $deps"
 echo "  $@"
-echo "with dependencies"
-echo "  $deps"
 echo
 
-pkgx $deps -- $@
+pkgx $deps $@
