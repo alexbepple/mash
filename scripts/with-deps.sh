@@ -6,5 +6,6 @@ echo "Running"
 echo "  $@"
 echo "with dependencies"
 echo "  $deps"
+echo
 
 pkgx $deps -- $@
