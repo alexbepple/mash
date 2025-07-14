@@ -4,11 +4,7 @@ import { Path } from 'https://raw.githubusercontent.com/pkgxdev/libpkgx/refs/tag
 import sniff from 'https://raw.githubusercontent.com/alexbepple/mash/refs/heads/main/lib/sniff.v1.8.1.ts'
 import * as r from 'npm:ramda@0.31.3'
 
-const mapPkgToString = r.pipe(
-  pkg => `${pkg.project}@${pkg.constraint}`,
-  r.replace('@*', ''),
-  r.replace('@~', '@'),
-)
+const mapPkgToString = pkg => `'+${pkg.project}${pkg.constraint}'`
 
 const sniffResult = await sniff(Path.cwd())
 r.pipe(
@@ -16,7 +12,6 @@ r.pipe(
   r.prop('pkgs'),
   // r.tap(console.log),
   r.map(mapPkgToString),
-  r.map(r.concat('+')),
   r.join(' '),
   console.log,
 )()
