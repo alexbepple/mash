@@ -1,4 +1,4 @@
-#!/usr/bin/env -S pkgx bash -eo pipefail
+#!/usr/bin/env -S pkgx bash -o errexit
 
 deps="$(pkgx mash deps-as-plus-pkg)"
 
