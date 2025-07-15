@@ -1,10 +1,3 @@
-#!/usr/bin/env -S pkgx bash -o errexit
+#!/usr/bin/env -S pkgx bash -o errexit -o xtrace
 
-deps="$(pkgx mash deps-as-plus-pkg)"
-
-echo "Running"
-echo "  pkgx $deps"
-echo "  $@"
-echo
-
-pkgx $deps $@
+pkgx $(pkgx mash deps-as-plus-pkg) $@
