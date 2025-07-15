@@ -1,1 +1,2 @@
-dependencies: a b@1 c@1.2 d@1.2.3   e>=1<3 f=1.2.3
+# use existent pkgs in order to be able to run pkgx
+dependencies: node deno@2 bun@1.2 aws-vault@7.2.0   just>=1<3 watchexec=2.3.1
